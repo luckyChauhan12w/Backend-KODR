@@ -20,11 +20,17 @@ app.post('/note', (req, res) => {
     res.send(notesData)
 });
 
-app.delete('/notes/:id', (req, res) => {
-    const i = req.params.id
+app.delete('/notes/:index', (req, res) => {
+    const i = req.params.index
     delete notesData[i]
     res.send('Deleted!')
 });
+
+app.patch('note/:index', (req, res) => {
+    const index = req.params.index
+    notesData[index].desc = res.body.desc
+    console.log('notes updated')
+})
 
 app.listen(3000, function () {
     console.log('Server is Running');
