@@ -10,6 +10,11 @@ app.post('/notes', (req, res) => {
 
 const notesData = []
 
+app.get('/', (req, res) => {
+    res.send('Hello World!')
+})
+
+
 app.get('/getData', (req, res) => {
     res.send(notesData)
 })
