@@ -1,8 +1,8 @@
-// Server Start krna 
-// Database connect krna
+// it used to create server
+// it used to connect to the database
 
 const app = require('./src/app')
-const app = require('./src/db/db')
+const connectDB = require('./src/db/db')
 
 
 app.listen(3000, () => {
