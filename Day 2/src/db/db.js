@@ -1,7 +1,8 @@
 const mongoose = require("mongoose");
+require("dotenv").config();
 
 function connectDB() {
-    mongoose.connect('mongodb+srv://kodr-2:9J2tytTgbWIV8ATP@cluster0.ncjtbsl.mongodb.net/cosmo')
+    mongoose.connect(process.env.MONGO_URI)
         .then(() => {
             console.log('database connected!')
         })
