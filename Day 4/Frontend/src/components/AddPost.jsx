@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
+import { useNavigate } from "react-router";
 
 const AddPost = () => {
   const [file, setFile] = useState(null);
   const [caption, setCaption] = useState("");
   const [preview, setPreview] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
 
   const notify = () => toast("Your Image uploaded Successfully!");
 
@@ -49,6 +51,9 @@ const AddPost = () => {
     } finally {
       setIsLoading(false);
       notify();
+      setTimeout(() => {
+        navigate("/Post");
+      }, 2000);
     }
   };
 
