@@ -12,3 +12,4 @@ yarn-error.log*
 # system files
 .DS_Store
 Thumbs.db
+Day 4/Backend/src/db/db.js
