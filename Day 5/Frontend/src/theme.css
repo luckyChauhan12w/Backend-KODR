@@ -1,0 +1,20 @@
+:root {
+  --color-bg-light: #f5f6fa;
+  --color-bg-dark: #18191a;
+  --color-text-light: #222;
+  --color-text-dark: #f5f6fa;
+  --color-primary: #4f8cff;
+  --color-secondary: #ffb347;
+  --color-border: #e0e0e0;
+  --color-card-bg-light: #fff;
+  --color-card-bg-dark: #242526;
+}
+
+[data-theme="dark"] {
+  --color-bg-light: #18191a;
+  --color-bg-dark: #18191a;
+  --color-text-light: #f5f6fa;
+  --color-text-dark: #f5f6fa;
+  --color-card-bg-light: #242526;
+  --color-card-bg-dark: #242526;
+}
