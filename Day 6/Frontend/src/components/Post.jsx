@@ -5,7 +5,7 @@ const Post = () => {
   const [data, setData] = useState();
   const getImageData = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/posts");
+      const res = await axios.get("https://backend-kodr-2.onrender.com/posts");
       setData(res.data);
     } catch (error) {
       console.log(error);

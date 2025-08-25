@@ -33,7 +33,7 @@ const AddPost = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:3000/posts",
+        "https://backend-kodr-2.onrender.com/posts",
         formData,
         {
           headers: {
