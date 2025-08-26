@@ -4,6 +4,24 @@ const jwt = require('jsonwebtoken');
 
 const router = express.Router()
 
+
+const verifyToken = (req, res, next) => {
+    const token = req.cookies.token;
+
+    if (!token) {
+        return res.status(401).json({ message: "Token missing" });
+    }
+
+    try {
+        const decoded = jwt.verify(token, process.env.JWT_SECRET);
+        req.user = decoded;
+        next();
+    } catch (err) {
+        return res.status(403).json({ message: "Invalid token" });
+    }
+};
+
+
 router.post('/register', async (req, res) => {
 
     try {
@@ -60,11 +78,14 @@ router.post('/register', async (req, res) => {
 })
 
 
-router.get('/user', (req, res) => {
+router.get('/user', verifyToken, async (req, res) => {
+    console.log(req.user.id)
 
-    const token = req.cookies.token
+    const userDetails = await userModel.findOne({
+        _id: req.user.id
+    })
 
-    console.log(token)
+    res.send(userDetails)
 })
 
 
