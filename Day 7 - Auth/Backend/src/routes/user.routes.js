@@ -61,6 +61,7 @@ router.post('/register', async (req, res) => {
 
 
 router.get('/user', (req, res) => {
+
     const token = req.cookies.token
 
     console.log(token)
